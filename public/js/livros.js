@@ -11,10 +11,13 @@ function displayLivros(livros) {
         const autorCell = row.insertCell(1);
         autorCell.textContent = livro.autor;
 
-        const dataCell = row.insertCell(2);
+        const editoraCell = row.insertCell(2);
+        editoraCell.textContent = livro.editora;
+
+        const dataCell = row.insertCell(3);
         dataCell.textContent = new Date(livro.dataPublicacao).toLocaleDateString();
 
-        const actionsCell = row.insertCell(3);
+        const actionsCell = row.insertCell(4);
         actionsCell.innerHTML = `<button class="icon-btn" onclick='editarLivro(${JSON.stringify(livro)})'>
         <i class="fas fa-edit"></i> Editar
     </button>
@@ -74,7 +77,39 @@ function limparFormulario(){
     livroId.value = "";
 }
 
+function carregarAutores() {
+    fetch("/api/autores")
+        .then(response => response.json())
+        .then(autores => {
+            const autorSelect = document.getElementById("autor");
+            autores.forEach(autor => {
+                const option = document.createElement("option");
+                option.value = autor.id;
+                option.textContent = autor.nome;
+                autorSelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error("Erro ao carregar autores:", error));
+}
+
+function carregarEditoras() {
+    fetch("/api/editoras")
+        .then(response => response.json())
+        .then(editoras => {
+            const editoraSelect = document.getElementById("editora");
+            editoras.forEach(editora => {
+                const option = document.createElement("option");
+                option.value = editora.id;
+                option.textContent = editora.nome;
+                editoraSelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error("Erro ao carregar editoras:", error));
+}
+
 document.addEventListener("DOMContentLoaded", function() {
+    carregarAutores();
+    carregarEditoras();
     const apiUrl = "/api/livros";
     const bookForm = document.getElementById("bookForm");
     const bookPopup = document.getElementById("bookPopup");

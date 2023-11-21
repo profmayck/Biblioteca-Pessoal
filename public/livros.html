@@ -16,6 +16,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/livros.html">Livros</a></li>
+                <li><a href="/editoras.html">Editoras</a></li>
             </ul>
         </nav>
         <h1>Livros</h1>
@@ -31,6 +32,7 @@
             <tr>
                 <th>Título</th>
                 <th>Autor</th>
+                <th>Editora</th>
                 <th>Data de Publicação</th>
                 <th>Ações</th>
             </tr>
@@ -45,7 +47,21 @@
             <h3>Adicionar/Atualizar Livro</h3>
             <input type="hidden" id="id_livro">
             <input type="text" id="titulo" placeholder="Título" required>
-            <input type="text" id="autor" placeholder="Autor" required>
+            <div>
+                <label for="autor">Autor:</label>
+                <select id="autor" required>
+                    <option value="">Selecione um autor</option>
+                    <!-- Opções de autores serão adicionadas aqui -->
+                </select>
+            </div>
+            
+            <div>
+                <label for="editora">Editora:</label>
+                <select id="editora" required>
+                    <option value="">Selecione uma editora</option>
+                    <!-- Opções de editoras serão adicionadas aqui -->
+                </select>
+            </div>
             <input type="date" id="dataPublicacao" placeholder="Data de Publicação" required>
             <button type="submit">Salvar</button>
             <button type="button" id="closePopupBtn">Fechar</button>

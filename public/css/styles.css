@@ -128,3 +128,46 @@ main {
 .icon-btn.delete:hover {
     color: #b02130; /* Cor vermelha ao passar o mouse */
 }
+
+/* Estilo dos campos de entrada e select */
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%; /* Largura total dentro do seu container */
+    padding: 8px 12px; /* Espaçamento interno */
+    margin: 8px 0; /* Margem externa */
+    display: inline-block;
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Box sizing para calcular padding dentro da largura/altura */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #555; /* Cor da borda ao focar */
+    outline: none; /* Remover outline padrão */
+}
+
+/* Estilo dos labels */
+label {
+    font-size: 18px; /* Tamanho da fonte para labels */
+    margin-bottom: 10px;
+    display: block; /* Faz o label aparecer acima do input */
+}
+
+/* Estilo do botão */
+button {
+    background-color: #007BFF; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 12px 20px; /* Espaçamento interno */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Cursor do mouse */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+button:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}

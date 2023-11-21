@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editoras - Biblioteca Pessoal</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/livros.html">Livros</a></li>
+                <li><a href="/editoras.html">Editoras</a></li>
+                <!-- Outras páginas podem ser adicionadas aqui -->
+            </ul>
+        </nav>
+        <h1>Editoras</h1>
+    </header>
+
+    <main>
+        <section id="addEditora"  class="hidden">
+            <h2>Adicionar Editora</h2>
+            <form id="editoraForm">
+                <input type="text" id="nome" placeholder="Nome da Editora" required>
+                <input type="text" id="endereco" placeholder="Endereço" required>
+                <input type="text" id="telefone" placeholder="Telefone">
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <section id="editorasList">
+            <h2>Lista de Editoras</h2>
+            <button class="icon-btn" id="addEditoraBtn">
+                <i class="fas fa-plus"></i> Adicionar
+            </button>
+            
+            <ul id="list"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Biblioteca Pessoal</p>
+    </footer>
+
+    <script src="/js/editoras.js"></script>
+</body>
+
+</html>
